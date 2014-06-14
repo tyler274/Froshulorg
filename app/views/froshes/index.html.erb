@@ -1,8 +1,12 @@
 <table>
+<tr><td>Name</td><td>Dinner</td><td>dessert</td></tr>
 <% @froshes.each do |frosh| %>
 <tr>
 	<td><%= frosh.name %></td>
 	<td><%= frosh.dinner %></td>
+	<td><%= frosh.dessert %></td>
+    <td><%= link_to "votes", frosh_votes_path(frosh) %></td>
+    <td><%= link_to "edit", frosh_path(frosh) %></td>
 </tr>
 <% end %>
 </table>

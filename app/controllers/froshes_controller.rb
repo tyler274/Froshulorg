@@ -8,7 +8,7 @@ class FroshesController < ApplicationController
 	@frosh.dinner = params[:froshform][:dinner]
 	@frosh.dessert = params[:froshform][:dessert]
 	@frosh.save
-	redirect_to @frosh
+	redirect_to froshes_path
   end
 
   def show

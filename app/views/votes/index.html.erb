@@ -1,3 +1,4 @@
 <% @votes.each do |vote| %>
 <%= vote.value %>
 <% end %>
+<%= link_to "add vote", action: "new" %>

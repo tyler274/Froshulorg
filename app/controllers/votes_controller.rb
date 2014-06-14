@@ -13,7 +13,7 @@ class VotesController < ApplicationController
   	@vote = @frosh.votes.create
 	@vote.value = params[:voteobj][:value];
 	@vote.save
-	redirect_to @frosh
+	redirect_to frosh_votes_path(@frosh)
   end
 
   def destory
