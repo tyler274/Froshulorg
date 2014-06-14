@@ -1,0 +1,8 @@
+<%= @leftfrosh.name %>
+<%= form_for :a, url:{action:"savecmp", winner:@leftfrosh.id, loser:@rightfrosh.id}, :html => { :method => 'GET' }  do |f| %>
+<%= f.submit %>
+<% end %>
+<%= @rightfrosh.name %>
+<%= form_for :a, url:{action:"savecmp", winner:@rightfrosh.id, loser:@leftfrosh.id}, :html => { :method => 'GET' } do |f| %>
+<%= f.submit %>
+<% end %>
