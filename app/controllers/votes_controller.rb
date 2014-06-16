@@ -16,7 +16,7 @@ class VotesController < ApplicationController
 	redirect_to frosh_votes_path(@frosh)
   end
 
-  def destory
+  def destroy
   	
   end
 end
