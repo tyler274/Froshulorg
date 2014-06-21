@@ -63,4 +63,13 @@ class CompareController < ApplicationController
       render text: "plz don't do that"
     end
   end
+  
+  def list
+  	@comparisons = Comparison.all
+  end
+
+  def delete
+  	Comparison.find(params[:id]).destroy()
+	redirect_to action: "list"
+  end
 end
