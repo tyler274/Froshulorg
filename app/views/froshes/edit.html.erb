@@ -1,0 +1,10 @@
+test test test
+<%= form_for @frosh, url: frosh_path(@frosh), method: :put do |f| %>
+name
+<%= f.text_field :name %>
+dinner
+<%= f.text_field :dinner %>
+dessert
+<%= f.text_field :dessert %>
+<%= f.submit %>
+<% end %>

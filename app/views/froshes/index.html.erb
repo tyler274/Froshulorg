@@ -6,7 +6,8 @@
 	<td><%= frosh.dinner %></td>
 	<td><%= frosh.dessert %></td>
     <td><%= link_to "votes", frosh_votes_path(frosh) %></td>
-    <td><%= link_to "edit", frosh_path(frosh) %></td>
+    <td><%= link_to "view", frosh_path(frosh) %></td>
+    <td><%= link_to "edit", edit_frosh_path(frosh) %></td>
 </tr>
 <% end %>
 </table>
