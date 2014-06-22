@@ -1,16 +1,11 @@
-<table>
-<tr><td>winner</td/><td>loser</td><td>delete</td></tr>
+<table class="sortableTable">
+<tr class="tableHead"><td>winner</td><td>loser</td></tr>
 
 <% @comparisons.each do |comparison| %>
-<tr>
-<td>
-<%= Frosh.find(comparison.winner).name %>
-</td>
-<td>
-<%= Frosh.find(comparison.loser).name %>
-</td>
-<td>
-<%= link_to 'delete', {:controller=> 'compare', :action => 'delete', :id=>comparison.id} %>
-</td>
+<tr class="tableRow">
+<td><%= Frosh.find(comparison.winner).name %></td>
+<td><%= Frosh.find(comparison.loser).name %></td>
+<td><%= link_to 'delete', {:controller=> 'compare', :action => 'delete', :id=>comparison.id} %></td>
 </tr>
 <% end %>
+</table

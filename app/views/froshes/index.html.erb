@@ -1,7 +1,7 @@
-<table>
-<tr><td>Name</td><td>Dinner</td><td>dessert</td></tr>
+<table class="sortableTable">
+<tr class="tableHead"><td>Name</td><td>Dinner</td><td>dessert</td></tr>
 <% @froshes.each do |frosh| %>
-<tr>
+<tr class="tableRow">
 	<td><%= frosh.name %></td>
 	<td><%= frosh.dinner %></td>
 	<td><%= frosh.dessert %></td>
