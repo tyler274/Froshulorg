@@ -1,10 +1,18 @@
-test test test
+Edit this frosh's data
 <%= form_for @frosh, url: frosh_path(@frosh), method: :put do |f| %>
 name
 <%= f.text_field :name %>
+last name
+<%= f.text_field :ilast_name %>
 dinner
 <%= f.text_field :dinner %>
 dessert
 <%= f.text_field :dessert %>
+image url
+<%= f.text_field :image_url %>
+anagram
+<%= f.text_field :anagram%>
+interest url
+<%= f.text_field :interest_url%>
 <%= f.submit %>
 <% end %>

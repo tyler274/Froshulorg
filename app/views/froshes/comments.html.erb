@@ -1,0 +1,9 @@
+<%= @frosh.name %>
+<%= @frosh.anagram %>
+<%= @frosh.interest_url %>
+
+Frosh comments
+<%= form_for @frosh, url: frosh_comments_url(@frosh), method: :put do |f| %>
+<%= f.text_area :comments %>
+<%= f.submit %>
+<% end %>

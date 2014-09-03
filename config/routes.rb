@@ -6,6 +6,8 @@ Froshulator::Application.routes.draw do
   get "compare/savecmp/:loser/:winner", to: "compare#savecmp"
 
   resources :froshes do
+    get :comments, to: :comments
+    put :comments, to: :save_comments
     resources :votes
   end
 

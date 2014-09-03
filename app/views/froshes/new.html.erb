@@ -1,10 +1,18 @@
-test test test
+Create a new frosh
 <%= form_for :froshform, url: froshes_path do |f| %>
 name
 <%= f.text_field :name %>
+last name (leave blank if their name is normal)
+<%= f.text_field :last_name %>
 dinner
 <%= f.text_field :dinner %>
 dessert
 <%= f.text_field :dessert %>
+image url
+<%= f.text_field :image_url %>
+anagram
+<%= f.text_field :anagram%>
+interest url
+<%= f.text_field :interest_url%>
 <%= f.submit %>
 <% end %>

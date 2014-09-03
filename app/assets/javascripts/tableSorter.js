@@ -27,7 +27,7 @@ function sortBy(rows, index)
 		var bstr = b.children[index].textContent;
 		if($.isNumeric(astr) && $.isNumeric(bstr))
 		{
-			return (astr - bstr);
+			return (parseInt(astr) - parseInt(bstr));
 		}
 		else
 		{

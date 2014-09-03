@@ -1,13 +1,16 @@
 <table class="sortableTable">
-<tr class="tableHead"><td>Name</td><td>Dinner</td><td>dessert</td></tr>
+<tr class="tableHead"><td>Name</td><td>Last name</td><td>Dinner</td><td>dessert</td><td>anagram</td></tr>
 <% @froshes.each do |frosh| %>
 <tr class="tableRow">
 	<td><%= frosh.name %></td>
+	<td><%= frosh.last_name %></td>
 	<td><%= frosh.dinner %></td>
 	<td><%= frosh.dessert %></td>
+	<td><%= frosh.anagram%></td>
     <td><%= link_to "votes", frosh_votes_path(frosh) %></td>
     <td><%= link_to "view", frosh_path(frosh) %></td>
     <td><%= link_to "edit", edit_frosh_path(frosh) %></td>
+    <td><%= link_to "comments", frosh_comments_path(frosh) %></td>
 </tr>
 <% end %>
 </table>
