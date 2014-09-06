@@ -3,8 +3,8 @@
 
 <% @comparisons.each do |comparison| %>
 <tr class="tableRow">
-<td><%= Frosh.find(comparison.winner).name %></td>
-<td><%= Frosh.find(comparison.loser).name %></td>
+<td><%= comparison.winner.name %></td>
+<td><%= comparison.loser.name %></td>
 <td><%= link_to 'delete', {:controller=> 'compare', :action => 'delete', :id=>comparison.id} %></td>
 </tr>
 <% end %>
