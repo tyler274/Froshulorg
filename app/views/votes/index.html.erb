@@ -1,4 +1,5 @@
 <% @votes.each do |vote| %>
-<%= vote.value %>
+    <%= vote.value %>
+    <%= link_to "delete", frosh_vote_path(@frosh, vote), method: :delete %>
 <% end %>
 <%= link_to "add vote", action: "new" %>

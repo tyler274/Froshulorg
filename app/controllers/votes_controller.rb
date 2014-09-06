@@ -17,6 +17,8 @@ class VotesController < ApplicationController
   end
 
   def destroy
-  	
+  	Vote.find(params[:id]).destroy
+    redirect_to frosh_votes_path(params[:frosh_id])
   end
+
 end

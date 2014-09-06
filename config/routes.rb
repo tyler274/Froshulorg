@@ -1,9 +1,12 @@
 Froshulator::Application.routes.draw do
-  get "compare/index"
+  get "compare", to: "compare#index"
   get "compare/list"
   get "compare/delete/:id", to: "compare#delete"
   get "compare/compare/:left/:right", to: "compare#compare"
   get "compare/savecmp/:loser/:winner", to: "compare#savecmp"
+
+  resources :presort do
+  end
 
   resources :froshes do
     get :comments, to: :comments

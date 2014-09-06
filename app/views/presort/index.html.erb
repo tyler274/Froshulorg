@@ -1,0 +1,12 @@
+Frosh comments
+    <% @froshes.each do |frosh| %>
+    <div class="tableRow">
+    	<div><%= frosh.name %></div>
+    	<div><%= frosh.last_name %></div>
+    	<div><%= frosh.anagram%></div>
+        <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
+        <%= f.select :prelim_rank, @positions %>
+        <%= f.submit "insert rank"%>
+        <% end %>
+    </div>
+    <% end %>

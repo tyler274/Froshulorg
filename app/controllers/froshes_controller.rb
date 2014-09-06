@@ -52,6 +52,11 @@ class FroshesController < ApplicationController
 	redirect_to froshes_path
   end
 
+  def destroy
+    Frosh.find(params[:id]).destroy
+    redirect_to froshes_path
+  end
+
   def index
   	@froshes = Frosh.all
   end

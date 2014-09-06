@@ -1,7 +1,7 @@
 class CompareController < ApplicationController
   def index
     #get the list of frosh for processing
-    @froshes = Frosh.all
+    @froshes = Frosh.ordered
     #now we need to start our sorting process
     catch :notcompared do
       @sorted = merge_sort(@froshes);
@@ -11,7 +11,7 @@ class CompareController < ApplicationController
   def merge_sort(a)
     return a if a.size <= 1
     l, r = split_array(a)
-    result = combine(merge_sort(l), merge_sort(r))
+    combine(merge_sort(l), merge_sort(r))
   end
 
   def split_array a
