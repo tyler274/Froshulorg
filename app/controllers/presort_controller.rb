@@ -12,10 +12,12 @@ class PresortController < ApplicationController
         old_frosh = Frosh.find(params[:frosh][:prelim_rank])
         frosh.list = old_frosh.list
         frosh.save
-        if old_frosh.first?
-            frosh.prepend
-        else
-            frosh.append_to old_frosh.previous
+        if frosh != old_frosh.previous
+            if old_frosh.first?
+                frosh.prepend
+            else
+                frosh.append_to old_frosh.previous
+            end
         end
         #somehow update the ranking somehow
         redirect_to presort_index_path

@@ -1,5 +1,5 @@
 <div class="names">
-  <h1><%= frosh.name %><!--TODO nickname--></h1> 
+  <h1><%= frosh.name %> <%= "(" + frosh.nickname + ")" unless frosh.nickname == nil or frosh.nickname == "" %></h1> 
   <h2><%= frosh.anagram %></h2>
 </div>
 

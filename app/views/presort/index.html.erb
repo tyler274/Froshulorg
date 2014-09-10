@@ -8,7 +8,7 @@
     <%= content_tag "div", class: frosh.color do %><!-- replace "green" with "blue" or "red" for froshes in other lists-->
 	    <%= frosh_index + 1 %><br> <!-- replace with frosh's current ranking, compared to all the froshes. 1 = bestfrosh, 2 = not-as-good-frosh, etc-->
 	    <%= image_tag frosh.image_url %><br> <!-- replace with actual photo of frosh -->
-        <h3><%= frosh.name %></h3>
+        <h3><%= frosh.name %> <%= "(" + frosh.nickname + ")" unless frosh.nickname == nil or frosh.nickname == "" %></h3>
 	    <%= frosh.anagram %><br>
 	    <%= frosh.prelim_score %><br> <!-- replace with actual rating -->
 	    % who voted: <%= frosh.percent_voted %><br> <!-- replace with actual percentage -->
