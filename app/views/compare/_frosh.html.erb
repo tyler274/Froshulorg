@@ -1,0 +1,40 @@
+<div class="names">
+  <h1><%= frosh.name %><!--TODO nickname--></h1> 
+  <h2><%= frosh.anagram %></h2>
+</div>
+
+<div class="pictures">
+  <div class="photo">
+     <!-- pls change the address in the line below to point to the actual location of the photo -->
+     <%= image_tag frosh.image_url %>
+  </div>
+
+  <div class="plots">
+        <!-- insert histogram here idk how the hisogram works. should be 144 px wide and 215px tall -->
+     <%= content_tag "div", class: "histogram", style: 'width: 144px; height: 215px;', data: {votes: frosh.votes.map(&:value)} do %>
+        loading historgram
+     <% end %>
+     
+     <!-- Shows the % of people who voted on this frosh. Please input the actual correct %. -->
+     <div class="meter">
+        <span style="width: 19.1%"></span>
+     </div>
+     19.1% voted  <!-- don't forget to change this one too -->
+  </div>
+</div>
+
+<br>
+<div class="text">
+<%= link_to "Interest sheet", frosh.interest_url %>
+<br>
+<div class="comments">
+<%= simple_format(frosh.comments) %>
+</div>
+</div>
+
+<div class="button">
+  <!-- put the submit button here.-->
+  <%= form_for :a, url:{action:"savecmp", winner:frosh.id, loser:other_frosh.id}, :html => { :method => 'GET' } do |f| %>
+    <%= f.submit "Choose" %>
+  <% end %>
+</div>

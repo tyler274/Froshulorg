@@ -1,0 +1,53 @@
+body {
+   color:#000000;
+   font-family:verdana, sans-serif;
+   font-size:10pt;
+   background:#FFFFFF;
+   margin:0;
+   padding:0;
+}
+
+#presort {
+   padding: 15px;
+}
+
+#navigation {
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 5px;
+}
+
+table, th, td {
+   border: 1px solid black;
+   text-align: center;   
+   margin-left: auto;
+   margin-right: auto;
+} 
+
+td {
+   width: 180px;
+}
+
+
+table h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+td.green {
+   background-color: #6F3;
+}
+
+td.blue {
+   background-color: #69F;
+}
+
+td.red {
+   background-color: #F33;
+}
+
+td img {
+   width:100px;
+}

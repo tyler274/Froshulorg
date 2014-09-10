@@ -1,8 +1,10 @@
-<%= @leftfrosh.name %>
-<%= form_for :a, url:{action:"savecmp", winner:@leftfrosh.id, loser:@rightfrosh.id}, :html => { :method => 'GET' }  do |f| %>
-<%= f.submit %>
-<% end %>
-<%= @rightfrosh.name %>
-<%= form_for :a, url:{action:"savecmp", winner:@rightfrosh.id, loser:@leftfrosh.id}, :html => { :method => 'GET' } do |f| %>
-<%= f.submit %>
-<% end %>
+<div id="container">
+<div id="frosh-left" class="frosh">
+    <%= render partial: "frosh", locals: {frosh: @leftfrosh, other_frosh: @rightfrosh} %>
+</div>
+
+
+<div id="frosh-right" class="frosh">
+    <%= render partial: "frosh", locals: {frosh: @rightfrosh, other_frosh: @leftfrosh} %>
+</div>
+</div>

@@ -1,0 +1,33 @@
+body {
+   color:#000000;
+   font-family:verdana, sans-serif;
+   font-size:10pt;
+   background:#FFFFFF;
+   margin:0;
+   padding:0;
+}
+
+#container {
+   position:relative;
+   margin-left:auto;
+   margin-right:auto;
+   max-width: 80%;
+   min-width:800px;
+}
+
+#frosh-info {
+   width: 230px;
+   float:left;
+   padding-left:10px;
+}
+
+#frosh-info img {
+   width:200px;
+}
+
+#comment-box {
+   float:left;
+   padding-left:25px;
+   padding-top:25px;
+}
+   

@@ -1,9 +1,19 @@
-<%= @frosh.name %>
-<%= @frosh.anagram %>
-<%= @frosh.interest_url %>
+<div id="container">
 
-Frosh comments
-<%= form_for @frosh, url: frosh_comments_url(@frosh), method: :put do |f| %>
-<%= f.text_area :comments %>
-<%= f.submit %>
-<% end %>
+    <div id="frosh-info">
+       <h2><%= @frosh.name %></h2>
+	   <h3><%= @frosh.anagram %></h3>
+	   <h3><%= link_to 'interest sheet', @frosh.interest_url %></h3>
+	   <%= image_tag @frosh.image_url %>
+	</div>
+	    
+	<div id="comment-box">
+	   Comments:<br>
+       <%= form_for @frosh, url: frosh_comments_url(@frosh), method: :put do |f| %>
+	      <!-- input javascript or something to make this form actually do things-->
+          <%= f.text_area :comments, rows: 30, cols: 65 %>
+		  <br>
+          <%= f.submit "Save Comments"%>
+       <% end %>
+    </div>
+</div>

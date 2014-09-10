@@ -1,0 +1,88 @@
+body {
+   color:#000000;
+   font-family:verdana, sans-serif;
+   font-size:10pt;
+   background:#FFFFFF;
+   margin:0;
+   padding:0;
+}
+
+#container {
+   position:relative;
+   min-width:800px;
+}
+
+#frosh-left {
+   float:left;
+   width: 48.5%;
+   height: 100%;
+   margin-left: 1%;
+   margin-right: 0.5%;
+}
+
+#frosh-right {
+   float:right;
+   width: 48.5%;
+   height: 100%;
+   margin-left: 0.5%;
+   margin-right: 1%;
+}
+
+.names {
+    padding-bottom:10px;
+}
+
+.names h1, .names h2 {
+   	text-align: center;
+    padding:0;
+	margin:0;
+}
+
+.pictures {
+	margin-left:auto;
+	margin-right:auto;
+    width: 370px;
+}
+
+.photo img {
+    float: left;
+	padding-right: 10px;
+    width: 200px;
+}
+
+.plots {
+    float: right;
+	width: 160px;
+}
+
+/* CSS for the vote rate bar */
+.meter { 
+	height: 5px;  
+	width: 140px;
+	position: relative;
+	background: #555;
+	padding: 2px;
+}
+.meter > span {
+	display: block;
+	height: 100%;
+	background-color: #0FF;
+	position: relative;
+	overflow: hidden;
+}
+
+.histogram {
+    padding-bottom: 5px;
+}
+
+.text {
+    float: left;
+	width: 100%;
+	padding: 5px 5px 5px 15px;
+	font-size: 140%;
+}
+
+.button {
+    clear:both;
+    padding: 5px 5px 20px 5px;
+}
