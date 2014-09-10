@@ -1,13 +1,34 @@
-Frosh comments
-    <% @froshes.each do |frosh| %>
-    <div class="tableRow">
-    	<div><%= frosh.name %></div>
-    	<div><%= frosh.last_name %></div>
-    	<div><%= frosh.anagram%></div>
-    	<div><%= frosh.color%></div>
+<div id="presort">
+
+<div id="froshtable">
+<!-- A table of froshes. Please generate them yourself. As long as they're in this format, it should be fine. -->
+<!-- Just copy and paste this div. Each td is a frosh box. They should organize themselves.-->
+<% @froshes.each do |frosh| %>
+    <%= content_tag "div", class: frosh.color do %><!-- replace "green" with "blue" or "red" for froshes in other lists-->
+	    current rank<br> <!-- replace with frosh's current ranking, compared to all the froshes. 1 = bestfrosh, 2 = not-as-good-frosh, etc-->
+	    <%= image_tag frosh.image_url %><br> <!-- replace with actual photo of frosh -->
+        <h3><%= frosh.name %></h3>
+	    <%= frosh.anagram %><br>
+	    <%= frosh.prelim_score %><br> <!-- replace with actual rating -->
+	    % who voted: <%= frosh.percent_voted %><br> <!-- replace with actual percentage -->
         <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
-        <%= f.select :prelim_rank, @positions %>
-        <%= f.submit "insert rank"%>
+            <%= f.select :prelim_rank, @positions %>
+            <%= f.submit "insert rank"%>
         <% end %>
-    </div>
-    <% end %>
+	<% end %>
+<% end %>
+<br>
+<div id="filters">
+<!-- IDK what you wanna do with these buttons. Just slap them in a row with some separators and call it good enough -->
+<form>
+<input type="button" value="Sort by Rating"> 
+||| Filters: 
+<input type="checkbox" name="filter" value="filter1">filter 1
+<input type="checkbox" name="filter" value="filter2">filter 2
+<input type="checkbox" name="filter" value="filter3">filter 3
+<input type="button" value="Filter by something"> 
+</form>
+</div>
+
+</div>
+

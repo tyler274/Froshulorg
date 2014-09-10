@@ -1,0 +1,55 @@
+body {
+   color:#000000;
+   font-family:verdana, sans-serif;
+   font-size:10pt;
+   background:#FFFFFF;
+   margin:0;
+   padding:0;
+}
+
+#presort {
+   padding: 15px;
+   overflow: auto;
+}
+
+#presort img {
+   width: 120px;
+}
+
+#filters {
+   clear:left;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 5px;
+}
+
+#presort h3 {
+   margin: 0px;
+}
+
+.green, .blue, .red {
+   position:relative;
+   width:150px;
+   float:left;
+   width:190px;
+   height:310px;
+   margin: 2px;
+   text-align: center;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+.green {
+   background-color: #6F3;
+}
+
+.blue {
+   background-color: #69F;
+}
+
+.red {
+   background-color: #F33;
+}
+
+
