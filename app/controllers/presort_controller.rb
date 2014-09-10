@@ -10,6 +10,8 @@ class PresortController < ApplicationController
     def update
         frosh = Frosh.find(params[:id])
         old_frosh = Frosh.find(params[:frosh][:prelim_rank])
+        frosh.list = old_frosh.list
+        frosh.save
         if old_frosh.first?
             frosh.prepend
         else
@@ -32,6 +34,23 @@ class PresortController < ApplicationController
                 frosh.update_attribute(:first, true)
                 prev = frosh
             end
+        end
+        redirect_to presort_index_path
+    end
+
+    def apply_cutoffs
+        green = params[:green].to_i
+        blue = params[:blue].to_i
+        froshes = Frosh.ordered
+        froshes.each_index do |index|
+            if index < green
+                froshes[index].list = 0
+            elsif index < blue
+                froshes[index].list = 1
+            else
+                froshes[index].list = 2
+            end
+            froshes[index].save
         end
         redirect_to presort_index_path
     end

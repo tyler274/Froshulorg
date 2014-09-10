@@ -4,6 +4,7 @@ Frosh comments
     	<div><%= frosh.name %></div>
     	<div><%= frosh.last_name %></div>
     	<div><%= frosh.anagram%></div>
+    	<div><%= frosh.color%></div>
         <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
         <%= f.select :prelim_rank, @positions %>
         <%= f.submit "insert rank"%>

@@ -9,4 +9,8 @@ class Frosh < ActiveRecord::Base
   def prelim_score
     @prelim_score ||= votes.map(&:value).inject{ |sum, x| sum + x } || 0
   end
+
+  def color
+    @color ||= ["green", "blue", "red"][list]
+  end
 end
