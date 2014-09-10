@@ -12,7 +12,7 @@ class Frosh < ActiveRecord::Base
   end
 
   def color
-    @color ||= ["green", "blue", "red"][list]
+    @color ||= ["green", "blue", "red"][list] if list
   end
 
   def percent_voted

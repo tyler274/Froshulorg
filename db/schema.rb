@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20140905163331) do
     t.string   "interest_url"
     t.string   "prelim_rank"
     t.integer  "list"
+    t.string   "nickname"
+    t.boolean  "male"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "next_id"

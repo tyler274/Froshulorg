@@ -14,8 +14,12 @@ class FroshesController < ApplicationController
 	@frosh.dinner = params[:froshform][:dinner]
 	@frosh.dessert = params[:froshform][:dessert]
 	@frosh.image_url = params[:froshform][:image_url]
+    if @frosh.image_url == ""
+        @frosh.image_url = "noimg.png"
+    end
 	@frosh.anagram = params[:froshform][:anagram]
 	@frosh.interest_url = params[:froshform][:interest_url]
+    @frosh.male = params[:froshform][:male]
 	@frosh.save
 	redirect_to froshes_path
   end
@@ -29,6 +33,7 @@ class FroshesController < ApplicationController
 	@frosh.image_url = params[:frosh][:image_url]
 	@frosh.anagram = params[:frosh][:anagram]
 	@frosh.interest_url = params[:frosh][:interest_url]
+    @frosh.male = params[:frosh][:male]
 	@frosh.save
 	redirect_to froshes_path
   end
@@ -48,6 +53,7 @@ class FroshesController < ApplicationController
   def save_comments
   	@frosh = Frosh.find(params[:frosh_id])
     @frosh.comments = params[:frosh][:comments]
+    @frosh.nickname = params[:frosh][:nickname]
 	@frosh.save
 	redirect_to froshes_path
   end

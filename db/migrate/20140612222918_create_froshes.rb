@@ -15,6 +15,9 @@ class CreateFroshes < ActiveRecord::Migration
       t.string :prelim_rank
 	  t.integer :list
 
+      t.string :nickname
+      t.boolean :male
+
       t.timestamps
     end
   end

@@ -3,9 +3,10 @@
 <div id="froshtable">
 <!-- A table of froshes. Please generate them yourself. As long as they're in this format, it should be fine. -->
 <!-- Just copy and paste this div. Each td is a frosh box. They should organize themselves.-->
-<% @froshes.each do |frosh| %>
+<% @froshes.each_index do |frosh_index| %>
+    <% frosh = @froshes[frosh_index] %>
     <%= content_tag "div", class: frosh.color do %><!-- replace "green" with "blue" or "red" for froshes in other lists-->
-	    current rank<br> <!-- replace with frosh's current ranking, compared to all the froshes. 1 = bestfrosh, 2 = not-as-good-frosh, etc-->
+	    <%= frosh_index + 1 %><br> <!-- replace with frosh's current ranking, compared to all the froshes. 1 = bestfrosh, 2 = not-as-good-frosh, etc-->
 	    <%= image_tag frosh.image_url %><br> <!-- replace with actual photo of frosh -->
         <h3><%= frosh.name %></h3>
 	    <%= frosh.anagram %><br>
