@@ -15,6 +15,9 @@ Froshulator::Application.routes.draw do
     resources :votes
   end
 
+  get "froshes/mass_vote/:meal", to: "froshes#mass_vote"
+  post "froshes/mass_vote/frosh_votes", to: "froshes#save_mass"
+
   #get 'compare#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

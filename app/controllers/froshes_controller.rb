@@ -66,4 +66,21 @@ class FroshesController < ApplicationController
   def index
   	@froshes = Frosh.all
   end
+
+  def mass_vote
+    @froshes = Frosh.where(dinner: params[:meal])
+  end
+
+  def save_mass
+    params['mass_vote'].each do |mass_vote|
+        frosh = Frosh.find(mass_vote['frosh_id'])
+        mass_vote['votes'].split('').each do |character|
+            vote = frosh.votes.create(value: character.to_i)
+            #vote.value = character.to_i
+            #vote.save
+        end
+    end
+    render text: params.inspect
+    #redirect_to froshes_path
+  end
 end

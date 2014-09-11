@@ -1,0 +1,9 @@
+<%= form_tag 'frosh_votes' do %>
+    <% @froshes.each do |frosh| %>
+        <%= frosh.name %>
+        <%= text_field_tag 'mass_vote[][votes]' %>
+        <%= hidden_field_tag 'mass_vote[][frosh_id]', frosh.id %>
+        <br>
+    <% end %>
+    <%= submit_tag %>
+<% end %>
