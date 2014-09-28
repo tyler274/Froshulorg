@@ -23,8 +23,11 @@ CSV.foreach('./froshes.csv', :headers => true) do |row|
   end
 
   frosh.interest_url = 'http://131.215.167.202:2014/assets/' + row['Last Name'].downcase + ', ' + row['First Name'].downcase + '.pdf'
-
-  frosh.image_url = 'noimg.png'#'image_' + imgnum.to_i + '.png'
+  if false#row['Images']
+    frosh.image_url = 'img-' + row['Images'] + '.jpg'
+  else
+    frosh.image_url = 'noimg.png'
+  end
   imgnum = imgnum + 1
 
   if row['Gender'] == 'm'

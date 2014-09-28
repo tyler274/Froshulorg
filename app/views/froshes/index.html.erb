@@ -1,7 +1,14 @@
 <table class="sortableTable">
-<tr class="tableHead"><td>Name</td><td>Last name</td><td>nickname</td><td>Dinner</td><td>dessert</td><td>anagram</td><td>male?</td></tr>
+<tr class="tableHead"><td></td><td>Name</td><td>Last name</td><td>nickname</td><td>Dinner</td><td>dessert</td><td>anagram</td><td>male?</td></tr>
 <% @froshes.each do |frosh| %>
 <tr class="tableRow">
+    <!-- hack hack hack andrew fix this plz -->
+    <!-- though I guess it works... -->
+    <td class="list-image">
+        <div id="frosh-info">
+            <%= image_tag frosh.image_url %>
+        </div>
+    </td>
 	<td><%= frosh.name %></td>
 	<td><%= frosh.last_name %></td>
 	<td><%= frosh.nickname %></td>

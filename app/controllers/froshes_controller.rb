@@ -55,7 +55,8 @@ class FroshesController < ApplicationController
     @frosh.comments = params[:frosh][:comments]
     @frosh.nickname = params[:frosh][:nickname]
 	@frosh.save
-	redirect_to froshes_path
+	#redirect_to froshes_path
+    render text: 'saved'
   end
 
   def destroy
@@ -70,12 +71,16 @@ class FroshesController < ApplicationController
   def mass_vote
     @froshes = Frosh.where(dinner: params[:meal])
   end
+  
+  def dinner
+    @froshes = Frosh.where(dinner: params[:meal])
+  end
 
   def save_mass
     params['mass_vote'].each do |mass_vote|
         frosh = Frosh.find(mass_vote['frosh_id'])
         mass_vote['votes'].split('').each do |character|
-            vote = frosh.votes.create(value: character.to_i)
+            frosh.votes.create(value: character.to_i)
             #vote.value = character.to_i
             #vote.save
         end

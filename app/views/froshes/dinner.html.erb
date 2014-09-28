@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link href="styles/comments.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="list-container">
+    <% @froshes.each do |frosh| %>
+    <div id="edit-frosh">
+        <%= image_tag frosh.image_url %>
+        <div id="frosh-links">
+        <%= frosh.name %> <br>
+        <%= frosh.nickname %> <br>
+        <%= frosh.anagram %> <br>
+        <%= link_to "comments", frosh_comments_path(frosh) %>
+        </div>
+    </div>
+    
+    <% end %>
+    
+</div>
+</body>
+
+</html>

@@ -6,6 +6,8 @@ $(function()
 		return function(){
 			console.log('click handler running for ' + rowIndex);
 			var rows = $('.tableRow');
+            // Disgusting hack so last name sort precedes any other sort
+			sortBy(rows, 2);
 			sortBy(rows, rowIndex);
 			rows.detach();
 			$('.sortableTable').append(rows);
@@ -16,6 +18,7 @@ $(function()
 	{
 		console.log('adding click handler ' + i);
 		head.children[i].onclick = clickHandler(i);
+		//head.children[i].onclick = function() {clickHandler(i)}(i);
 	}
 });
 
