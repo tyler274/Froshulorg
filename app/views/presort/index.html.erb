@@ -10,8 +10,9 @@
 	    <%= image_tag frosh.image_url %><br> <!-- replace with actual photo of frosh -->
         <h3><%= frosh.name %> <%= "(" + frosh.nickname + ")" unless frosh.nickname == nil or frosh.nickname == "" %></h3>
 	    <%= frosh.anagram %><br>
-	    <%= frosh.prelim_score %><br> <!-- replace with actual rating -->
-	    % who voted: <%= frosh.percent_voted %><br> <!-- replace with actual percentage -->
+	    Stdev: <%= number_with_precision(frosh.stdev) %><br> <!-- replace with actual rating -->
+	    Mean:  <%= number_with_precision(frosh.mean) %><br> <!-- replace with actual rating -->
+	    Number of votes: <%= frosh.percent_voted %><br> <!-- replace with actual percentage -->
         <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
             <%= f.select :prelim_rank, @positions %>
             <%= f.submit "insert rank"%>

@@ -7,6 +7,7 @@ Froshulator::Application.routes.draw do
 
   resources :presort do
   end
+  get "slorg", to: "presort#table"
   get "presort/apply_cutoffs/:green/:blue", to: "presort#apply_cutoffs"
 
   resources :froshes do

@@ -3,6 +3,14 @@ class PresortController < ApplicationController
         @froshes = Frosh.ordered
         @positions = []
         @froshes.each_index do |idx|
+            @positions.push([(idx + 1).to_s , @froshes[idx].id])
+        end
+    end
+    
+    def table
+        @froshes = Frosh.ordered
+        @positions = []
+        @froshes.each_index do |idx|
             @positions.push([idx.to_s + "-" + @froshes[idx].name, @froshes[idx].id])
         end
     end

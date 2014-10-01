@@ -1,0 +1,29 @@
+<div id="presort">
+
+<div id="froshtable">
+<!-- A table of froshes. Please generate them yourself. As long as they're in this format, it should be fine. -->
+<!-- Just copy and paste this div. Each td is a frosh box. They should organize themselves.-->
+<table>
+<% @froshes.each_index do |frosh_index| %>
+    <tr>
+    <% frosh = @froshes[frosh_index] %>
+	    <td><%= frosh_index + 1 %></td>
+	    <td><%= frosh.prelim_score %></td>
+	    <td><%= frosh.percent_voted %></td>
+    </tr>
+<% end %>
+</table>
+<div id="filters">
+<!-- IDK what you wanna do with these buttons. Just slap them in a row with some separators and call it good enough -->
+<form>
+<input type="button" value="Sort by Rating"> 
+||| Filters: 
+<input type="checkbox" name="filter" value="filter1">filter 1
+<input type="checkbox" name="filter" value="filter2">filter 2
+<input type="checkbox" name="filter" value="filter3">filter 3
+<input type="button" value="Filter by something"> 
+</form>
+</div>
+
+</div>
+
