@@ -13,10 +13,27 @@
 	    Stdev: <%= number_with_precision(frosh.stdev) %><br> <!-- replace with actual rating -->
 	    Mean:  <%= number_with_precision(frosh.mean) %><br> <!-- replace with actual rating -->
 	    Number of votes: <%= frosh.percent_voted %><br> <!-- replace with actual percentage -->
+        <%= link_to "comments", frosh_comments_path(frosh) %><br>
         <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
             <%= f.select :prelim_rank, @positions %>
             <%= f.submit "insert rank"%>
         <% end %>
+        <table>
+        <tr><td>
+        <% if(frosh_index > 15) %>
+          <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
+              <%= f.hidden_field :prelim_rank, value: @positions[frosh_index - 15][1] %>
+              <%= f.submit "up 15"%>
+          <% end %>
+        <% end %>
+        </td><td>
+        <% if(frosh_index < @froshes.length - 15) %>
+          <%= form_for frosh, url: presort_url(frosh), method: :put do |f| %>
+              <%= f.hidden_field :prelim_rank, value: @positions[frosh_index + 15][1] %>
+              <%= f.submit "down 15"%>
+          <% end %>
+        <% end %>
+        </td></tr></table>
 	<% end %>
 <% end %>
 <br>

@@ -8,7 +8,10 @@
     <tr>
     <% frosh = @froshes[frosh_index] %>
 	    <td><%= frosh_index + 1 %></td>
+	    <td><%= frosh.name %></td>
 	    <td><%= frosh.prelim_score %></td>
+	    <td><%= frosh.stdev %></td>
+	    <td><%= frosh.mean %></td>
 	    <td><%= frosh.percent_voted %></td>
     </tr>
 <% end %>

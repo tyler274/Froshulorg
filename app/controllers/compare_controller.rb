@@ -5,12 +5,28 @@ class CompareController < ApplicationController
     #now we need to start our sorting process
     catch :notcompared do
       #@sorted = merge_sort(@froshes);
-      @sorted = bubble_sort(@froshes);
+      @sorted = bubble_sort(@froshes, 50);
+      @sorted = bubble_sort(@froshes, 100);
+      @sorted = bubble_sort(@froshes, 150);
+      #@sorted = @froshes
+
+      respond_to do |format|
+        format.html
+        format.csv do
+          text = ""
+          @sorted.each_index do |index|
+            thisfrosh = @sorted[index]
+            text = text + thisfrosh.name + ',' + 'fuck' + ',' + thisfrosh.dinner_name_slorg + ',' + thisfrosh.image_url + ',' + 'urlurl' + ',' + thisfrosh.color \
+                + ',' + thisfrosh.mean.to_s + ',' + thisfrosh.stdev.to_s + ',' + thisfrosh.votes.length.to_s + '#slorg' + "\n"
+          end
+          render :text => text
+        end
+      end
     end
   end
 
-  def bubble_sort a
-    n = a.length
+  def bubble_sort a, limit
+    n = limit#a.length
     swapped = true
     while swapped  do
       swapped = false

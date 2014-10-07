@@ -17,7 +17,7 @@
      
      <!-- Shows the % of people who voted on this frosh. Please input the actual correct %. -->
      <div class="meter">
-        <span style="width: <%= frosh.percent_voted %>"></span>
+        <span style="width: <%= (frosh.percent_voted.to_f * 5).to_s + '%' %>"></span>
      </div>
      <%= frosh.percent_voted %> voted  <!-- don't forget to change this one too -->
   </div>
@@ -25,7 +25,8 @@
 
 <br>
 <div class="text">
-<%= link_to "Interest sheet", frosh.interest_url %>
+<%= link_to "Interest sheet", frosh.interest_url %><br>
+<%= frosh.dinner_name_slorg %>
 <br>
 <div class="comments">
 <%= simple_format(frosh.comments) %>
